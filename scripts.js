@@ -45,7 +45,7 @@ function setupPagination (items, wrapper, itemsPerPage) {
 function paginationButton (page, items) {
 	let button = document.createElement("button");
 	button.innerText = page;
-    button.classList.add("btn", "btn-success");
+    button.classList.add("btn", "btn-light", "m-1");
 
 	if (currentPage == page) button.classList.add("active");
 
