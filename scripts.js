@@ -1,6 +1,6 @@
 const fakeDB = [];
 const createFakeDB = () => {
-    const totalItems = Math.floor(Math.random() * (50 - 25)) + 25;
+    const totalItems = Math.floor(Math.random() * (99 - 50)) + 50;
     for(let i = 1; i <=totalItems; i++ ) {
         fakeDB.push(i);
     }
@@ -24,38 +24,39 @@ function displayList (items, wrapper, itemsPerPage, page) {
 	for (let i = 0; i < paginatedItems.length; i++) {
 		let item = paginatedItems[i];
 
-		let item_element = document.createElement('div');
-		item_element.classList.add('item');
-		item_element.innerText = item;
+		let itemElement = document.createElement("div");
+		itemElement.classList.add("item");
+		itemElement.innerText = item;
 		
-		wrapper.appendChild(item_element);
+		wrapper.appendChild(itemElement);
 	}
 }
 
 function setupPagination (items, wrapper, itemsPerPage) {
 	wrapper.innerHTML = "";
 
-	let page_count = Math.ceil(items.length / itemsPerPage);
-	for (let i = 1; i < page_count + 1; i++) {
+	let pageCount = Math.ceil(items.length / itemsPerPage);
+	for (let i = 1; i < pageCount + 1; i++) {
 		let btn = paginationButton(i, items);
 		wrapper.appendChild(btn);
 	}
 }
 
 function paginationButton (page, items) {
-	let button = document.createElement('button');
+	let button = document.createElement("button");
 	button.innerText = page;
+    button.classList.add("btn", "btn-success");
 
-	if (currentPage == page) button.classList.add('active');
+	if (currentPage == page) button.classList.add("active");
 
-	button.addEventListener('click', function () {
+	button.addEventListener("click", function () {
 		currentPage = page;
 		displayList(items, dataContainer, setItemsPerPage, currentPage);
 
-		let current_btn = document.querySelector('.pagenumbers button.active');
-		current_btn.classList.remove('active');
+		let currentBtn = document.querySelector(".pagination-bar button.active");//pagination-bar clase para quitar a primeira página de activa
+		currentBtn.classList.remove("active");
 
-		button.classList.add('active');
+		button.classList.add("active");
 	});
 
 	return button;
