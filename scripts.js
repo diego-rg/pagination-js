@@ -53,7 +53,7 @@ function paginationButton (page, items) {
 		currentPage = page;
 		displayList(items, dataContainer, setItemsPerPage, currentPage);
 
-		let currentBtn = document.querySelector(".pagination-bar button.active");//pagination-bar clase para quitar a primeira página de activa
+		let currentBtn = document.querySelector(".pagination-bar button.active");
 		currentBtn.classList.remove("active");
 
 		button.classList.add("active");
