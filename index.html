@@ -9,25 +9,14 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body>
-    <h1>Pagination example</h1>
+<body class="vh-100 vw-100 bg-dark text-light text-center">
+    <h1 class="p-5">Pagination example</h1>
+    <main class="d-flex bg-success w-50 h-50 m-auto">
+        <div id="data-container"></div>
 
-    <div id="data-container">
-
-    </div>
-
-    <nav aria-label="Page navigation">
-        <ul class="pagination pagination-bar" id="paginationBar">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
-
-
-
+        <div class="align-self-end" id="pagination-bar"></div>
+    </main>
+    
       <script src="scripts.js"></script>
       <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
